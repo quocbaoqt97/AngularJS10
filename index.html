@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app='webapp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+    div{
+      float:left;
+      margin-left:100px;
+    }
+    </style>
+    <title>AngularJS project</title>
+  </head>
+  <body>
+    <div ng-controller='availableitems as list1'>
+      <h1>To buy list!</h1>
+      <ul>
+        <li ng-repeat="item in list1.items">{{item.quantity}} of {{item.name}}
+          --{{item.status}}
+        <button type="button" ng-click="list1.buyitems($index)">Buy</button>
+      </li>
+      </ul>
+    </div>
+    <div ng-controller='boughtitems as list2'>
+      <h1>Bought list!</h1>
+      <ol>
+        <li ng-repeat="item in list2.items">{{item.quantity}} of {{item.name}}
+        {{list2.boughtitemm}}
+      <button type="button" ng-click="list2.remove($index)">Remove</button></li>
+      </ol>
+    </div>
+
+
+  </body>
+</html>
